@@ -5,7 +5,10 @@ library(tidyverse)
 library(readr)
 
 library(readr)
-PRSA_data_2010_1_1_2014_12_31 <- read_csv("Documents/stan_code/PRSA_data_2010.1.1-2014.12.31.csv") 
+
+directory = '/home/ubuntu/efs/stan/'
+
+PRSA_data_2010_1_1_2014_12_31 <- read_csv(paste0(directory,"PRSA_data_2010.1.1-2014.12.31.csv"))
 
 pollution <- PRSA_data_2010_1_1_2014_12_31 %>% select(year,pm25=pm2.5,DEWP,TEMP,PRES) %>%
   filter(complete.cases(.)) 
